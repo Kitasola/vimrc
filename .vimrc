@@ -14,6 +14,7 @@ set showmatch " ) が入力されたら ( に飛ぶ"
 "----------インデント関連---------"
 set autoindent
 set expandtab
+set smartindent
 set tabstop=2
 set shiftwidth=2
 
