@@ -1,12 +1,15 @@
 syntax on
 
+".vim指定"
+set runtimepath+=~/vimrc/.vim
+
 "色設定"
 colorscheme molokai
 set t_Co=256
 
 set backspace=indent,eol,start "backspaceの設定"
 set nocompatible "viの互換モードをOFF"
-set mouse=a "マウスを有効化"
+"set mouse=a マウスを有効化"
 set ruler  "カーソルが何行目の何列目かを表示する"
 set nowrap "長い行が折り返されない"
 set showmatch " ) が入力されたら ( に飛ぶ"
