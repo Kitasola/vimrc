@@ -41,3 +41,6 @@ imap <expr> <TAB> pumvisible() ? "\<Down>" : "\<Tab>"
 "qキーを二度押しでESCキーに"
 inoremap <silent> qq <Esc>
 inoremap <silent> っｑ <Esc>
+"c-Template"
+inoremap <silent>ctemp #include<stdio.h><Enter><Enter>int main(void){<Enter><Enter>return 0;<Enter>}<Up><Up><Tab>
+
