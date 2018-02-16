@@ -54,4 +54,4 @@ nnoremap <silent>ctemp i#include<stdio.h><Enter><Enter>int main(void){<Enter><En
 "翻訳機能 (trans:https://github.com/soimort/translate-shell)"
 :command -nargs=1 Trans :r! trans -b :en <f-args>
 "ツイート機能"
-:command Tweet :w | :!cat % | sudo tw --pipe | :q!
+:command Tweet :w | :!cat % | sudo tw --pipe
