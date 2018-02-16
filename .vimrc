@@ -23,7 +23,8 @@ set shiftwidth=2
 
 "----------検索関連----------"
 set hlsearch "検索語を強調表示"
-set nowrapscan "検索が終了したら先頭へ"
+"set nowrapscan 
+"検索が終了したら先頭へ"
 set ignorecase "検索で大文字と小文字を区別しない"
 set smartcase "大文字で検索すれば区別する"
 set history=2000 "検索履歴の数"
@@ -40,11 +41,17 @@ imap <expr> <TAB> pumvisible() ? "\<Down>" : "\<Tab>"
 "qキーを二度押しでESCキーに"
 inoremap <silent>qq <Esc>
 inoremap <silent>っｑ <Esc>
+
 "ハイライト削除"
 nnoremap <silent><Esc><Esc> :noh<Enter>
+
 "保存"
 inoremap <silent>ww <Esc>:w<Enter>i
+
 "c-Template"
 nnoremap <silent>ctemp i#include<stdio.h><Enter><Enter>int main(void){<Enter><Enter>return 0;<Enter>}<Up><Up><Tab>
+
 "翻訳機能 (trans:https://github.com/soimort/translate-shell)"
 :command -nargs=1 Trans :r! trans -b :en <f-args>
+"ツイート機能"
+:command Tweet :w | :!cat % | sudo tw --pipe | :q!
