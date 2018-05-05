@@ -4,15 +4,7 @@ syntax on
 set runtimepath+=~/vimrc/.vim
 
 call plug#begin('~/vimrc/.vim/plugged')
-Plug 'lervag/vimtex'
 call plug#end()
-
-"latex"
-let g:vimtex_compiler_latexmk = {'options': [ ]}
-let g:latex_latexmk_options = '-pdfdvi'
-let g:vimtex_latexmk_continuous = 1
-let g:vimtex_latexmk_background = 1
-let g:vimtex_view_general_viewer = 'evince'
 
 "色設定"
 colorscheme molokai
