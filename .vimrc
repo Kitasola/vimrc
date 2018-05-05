@@ -20,10 +20,10 @@ set expandtab
 set smartindent
 set tabstop=2
 set shiftwidth=2
+set spell
 
 "----------検索関連----------"
 set hlsearch "検索語を強調表示"
-set nowrapscan "検索が終了したら先頭へ"
 set ignorecase "検索で大文字と小文字を区別しない"
 set smartcase "大文字で検索すれば区別する"
 set history=2000 "検索履歴の数"
