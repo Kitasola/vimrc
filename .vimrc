@@ -23,7 +23,6 @@ set expandtab
 set smartindent
 set tabstop=2
 set shiftwidth=2
-set spell
 
 "----------検索関連----------"
 set hlsearch "検索語を強調表示"
@@ -59,3 +58,17 @@ nnoremap <silent>ctemp i#include<stdio.h><Enter><Enter>int main(void){<Enter><En
 :command -nargs=1 Trans :r! trans -b :en <f-args>
 "ツイート機能"
 :command Tweet :w | :!cat % | sudo tw --pipe
+
+"clang"
+function! s:clang_format()
+  let now_line = line(".")
+  exec ":%! clang-format"
+  exec ":" . now_line
+endfunction
+
+if executable('clang-format')
+  augroup cpp_clang_format
+    autocmd!
+    autocmd BufWrite,FileWritePre,FileAppendPre *.[ch]pp call s:clang_format()
+  augroup END
+endif
