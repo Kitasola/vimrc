@@ -4,7 +4,10 @@ syntax on
 set runtimepath+=~/vimrc/.vim
 
 call plug#begin('~/vimrc/.vim/plugged')
+"Plug 'Valloric/YouCompleteMe'
 call plug#end()
+
+let mapleader = "\<Space>"
 
 "色設定"
 colorscheme molokai
@@ -16,6 +19,10 @@ set nocompatible "viの互換モードをOFF"
 set ruler  "カーソルが何行目の何列目かを表示する"
 set nowrap "長い行が折り返されない"
 set showmatch " ) が入力されたら ( に飛ぶ"
+augroup vimrcEx
+  au BufRead * if line("'\"") > 0 && line("'\"") <= line("$") |
+  \ exe "normal g`\"" | endif
+augroup END
 
 "----------インデント関連---------"
 set autoindent
@@ -72,3 +79,6 @@ if executable('clang-format')
     autocmd BufWrite,FileWritePre,FileAppendPre *.[ch]pp call s:clang_format()
   augroup END
 endif
+
+"YouComplateMe"
+"nnoremap <leader>jd :YcmCompleter GoTo<CR>
